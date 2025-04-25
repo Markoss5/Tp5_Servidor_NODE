@@ -1,12 +1,8 @@
-import express from "express";
 //npm i express nodemon para instalar paquetes
-const app = express();
+import app from "./src/app.js";
+
 const port = 3000;
 
-app.get('/', (req, res) => {
-    res.send('Hello World');
-})
-
 app.listen(port, ()=> {
-    console.log('Listening on http://localhost' + port)
+    console.log('Listening on http://localhost:' + port)
 })
