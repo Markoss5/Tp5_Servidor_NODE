@@ -1,5 +1,6 @@
 import express from "express";
-import current_time from "./time";
+import tiempo from "../src/time.js";
+
 const app = express();
 
 app.get('/', (req, res) => {
@@ -7,7 +8,12 @@ app.get('/', (req, res) => {
 })
 
 app.get('/hora', (req, res) => {
-    res.send(current_time);
+    res.send(tiempo.current_time);
+})
+
+
+app.get('/fecha-completa', (req, res) => {
+    res.send(tiempo.current_fecha + ", " + tiempo.current_time.toString());
 })
 
 export default app
